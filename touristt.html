@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Intelligent Tourist Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    .message {
+      color: red;
+      margin-bottom: 10px;
+    }
+    .google-btn {
+      background-color: #dd4b39;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    #loginForm {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Registration Form -->
+  <form id="registerForm">
+    <h2>Register</h2>
+    <div class="message" id="registerMessage"></div>
+    <input type="text" id="newUsername" placeholder="New Username">
+    <input type="password" id="newPassword" placeholder="New Password">
+    <input type="submit" value="Register">
+    <a href="#" class="google-btn">Continue with Google</a>
+    <p>Already registered? <a href="#" onclick="showLoginForm()">Login</a></p>
+  </form>
+
+  <!-- Login Form -->
+  <form id="loginForm">
+    <h2>Login</h2>
+    <div class="message" id="loginMessage"></div>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <input type="submit" value="Login">
+    <a href="#" class="google-btn">Continue with Google</a>
+    <p>Not registered? <a href="#" onclick="showRegisterForm()">Register</a></p>
+  </form>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const loginMessage = document.getElementById('loginMessage');
+    const registerMessage = document.getElementById('registerMessage');
+
+    function showLoginForm() {
+      loginForm.style.display = 'block';
+      registerForm.style.display = 'none';
+    }
+
+    function showRegisterForm() {
+      loginForm.style.display = 'none';
+      registerForm.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
+
